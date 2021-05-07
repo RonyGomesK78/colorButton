@@ -17,6 +17,8 @@ const App = () => {
       >
         Change to {newButtonColor}
       </button>
+      <input type="checkbox" />
+
     </div>
   )
 }
