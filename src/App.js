@@ -5,17 +5,17 @@ const App = () => {
 
   const red = 'red';
   const blue = 'blue';
+  const gray = 'gray';
 
   const [ buttonColor, setButtonColor ] = useState(red);
   const newButtonColor = buttonColor === red ? blue : red;
- 
   const [ disabled, setDisabled ] = useState(false);
 
   
   return (
     <div>
       <button
-        style={{ backgroundColor: buttonColor }} 
+        style={{ backgroundColor: disabled ? gray : buttonColor }} 
         onClick={ () => setButtonColor(newButtonColor)}
         disabled={disabled}
       >
@@ -28,7 +28,7 @@ const App = () => {
         defaultChecked={disabled}
         aria-checked={disabled}
         onChange={ (event) => {
-          setDisabled(event.target.checked)
+          setDisabled(event.target.checked);
          }
         }
       />
